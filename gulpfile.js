@@ -15,7 +15,7 @@ gulp.task("serve",function(){
     });
 })
 
-gulp.task("test",function(){
+gulp.task("test",function(done){
 	new KarmaServer({
 		configFile: __dirname + '/karma.conf.js',
 		singleRun: true
@@ -32,6 +32,7 @@ gulp.task("test",function(){
 gulp.task("compile_scss",function(){
     gulp.src(["./src/scss/*.scss"])
 		.pipe(sass())
+		.pipe(gulp.dest(".temp/css"))
 		.on('error', function(error) {
 			console.log(error);
 	});
@@ -43,7 +44,7 @@ gulp.task("reload", function() {
 });
 
 gulp.task('watchSrc',function(){
-    gulp.watch(["./src/**/**.**","./src/**/**.**.**","app.js","index.html"],gulpsync.sync(["reload"]));
+    gulp.watch(["./src/**/*.*","./src/**/*.*.*","app.js","index.html"],gulpsync.sync(["reload"]));
 })
 
 gulp.task('default',["compile_scss","watchSrc","test","serve"])

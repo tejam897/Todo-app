@@ -1,4 +1,5 @@
 const app = angular.module("TodoApp");
 app.controller("TodoController",function($scope){
-    $scope.name = "hello, world"
+    $scope.name = "Todoapp"
+    $scope.todo = {title:"firstTodo",description:"create todos directive"}
 })

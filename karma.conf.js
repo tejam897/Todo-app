@@ -15,7 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/*.test.js'
+      'node_modules/angular/angular.js',
+      './app.js',
+      './src/js/app.controller.js',
+       './src/js/TodoDirective.js',
+      {pattern:'node_modules/angular-mocks/angular-mocks.js',include: true},
+      'test/**.js'
     ],
 
 
@@ -57,7 +62,9 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
-
+    proxies: {
+        'node_modules': '/Users/tejam/learn/angular/Todo-app/node_modules'
+    },
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,

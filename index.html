@@ -7,8 +7,10 @@
 <script src="./node_modules/angular/angular.js"></script>
 <script src="app.js"></script>
 <script src="./src/js/app.controller.js"></script>
-<script src="./src/js/app.scss"></script>
+<script src="./src/scss/app.scss"></script>
+<script src="./src/js/TodoDirective.js"></script>
 <body ng-app="TodoApp" ng-controller="TodoController">
     <h1>{{ name }}</h1>
+    <todo todo="todo"></todo>
 </body>
 </html>

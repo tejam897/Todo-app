@@ -1,1 +1,1 @@
-angular.module("TodoApp",[]);
+window.TodoApp = angular.module("TodoApp",[]);
