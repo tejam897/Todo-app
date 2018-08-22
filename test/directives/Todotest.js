@@ -1,4 +1,4 @@
-describe('Collection Directive', function () {
+describe('Todo directive', function () {
     var element, scope;
 
     beforeEach(module("TodoApp"));
@@ -9,8 +9,6 @@ describe('Collection Directive', function () {
         element = angular.element(
             "<todo todo=todo>"
         );
-
-
         scope.todo = {title:"testDirectives",description:"learn directive testing"};
         $compile(element)(scope);
         scope.$digest();
@@ -21,7 +19,6 @@ describe('Collection Directive', function () {
     })
     it('should contain title and discription content',function(){
         var items = element.find("h4");
-        console.log(items[0].innerHTML,items.length)
         expect(items[0].innerHTML).toContain('testDirectives');
         expect(items[1].innerHTML).toContain('learn directive testing');
     })

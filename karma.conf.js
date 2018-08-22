@@ -17,10 +17,10 @@ module.exports = function(config) {
     files: [
       'node_modules/angular/angular.js',
       './app.js',
-      './src/js/app.controller.js',
-       './src/js/TodoDirective.js',
-      {pattern:'node_modules/angular-mocks/angular-mocks.js',include: true},
-      'test/**.js'
+      './src/js/app/appController.js',
+       './src/js/directives/TodoDirective.js',
+       'node_modules/angular-mocks/angular-mocks.js',
+      'test/**/**.js'
     ],
 
 
